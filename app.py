@@ -50,31 +50,31 @@ def create_rainfall_temp_chart(months, rainfall_2000_2013, rainfall_2022, temp_2
         x=months, 
         y=rainfall_2000_2013, 
         name='2000-2013 average rainfall',
-        marker_color='#364fc7'  # Blue color
+        marker_color='#009E73'  # Blue color
     ))
     fig.add_trace(go.Bar(
         x=months, 
         y=rainfall_2022, 
         name='2022 Monthly rainfall',
-        marker_color='#ced4da'  # Grey color
+        marker_color='#80CFB9'  # Grey color
     ))
     
-    # Adding Temperature Lines
     # Assigning them to the secondary y-axis (yaxis='y2')
+    # Adding Temperature Lines with markers
     fig.add_trace(go.Scatter(
         x=months, 
         y=temp_2000_2013, 
         name='2000-2013 avg temp',
-        mode='lines',
-        line=dict(color='red'),
+        mode='lines+markers',  # Adding markers
+        line=dict(color='#009E73'),
         yaxis='y2'
     ))
     fig.add_trace(go.Scatter(
         x=months, 
         y=temp_2022, 
         name='2022 monthly temp',
-        mode='lines',
-        line=dict(color='green'),
+        mode='lines+markers',  # Adding markers
+        line=dict(color='#80CFB9'),
         yaxis='y2'
     ))
     
